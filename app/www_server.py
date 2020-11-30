@@ -4,11 +4,6 @@ app = Flask(__name__)
 
 app.static_folder = "/public"
 
-@app.route("/_oidc_callback")
-def oidc_callback():
-    print("data: " + request.data)
-    return "OK"
-
 @app.route("/")
 @app.route("/<path:name>")
 def server_static(name="index.html"):
